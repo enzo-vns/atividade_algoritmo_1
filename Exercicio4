@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    char operador;
+    float a, b;
+
+    printf("Digite o operador (+, -, *, /): ");
+    scanf(" %c", &operador);
+
+    printf("Digite o primeiro numero: ");
+    scanf("%f", &a);
+    printf("Digite o segundo numero: ");
+    scanf("%f", &b);
+
+    printf("\nResultado: ");
+
+    switch (operador) {
+        case '+':
+            printf("%.2f + %.2f = %.2f\n", a, b, a + b);
+            break;
+        case '-':
+            printf("%.2f - %.2f = %.2f\n", a, b, a - b);
+            break;
+        case '*':
+            printf("%.2f * %.2f = %.2f\n", a, b, a * b);
+            break;
+        case '/':
+            if (b == 0)
+                printf("Erro: divisao por zero!\n");
+            else
+                printf("%.2f / %.2f = %.2f\n", a, b, a / b);
+            break;
+        default:
+            printf("Operador invalido!\n");
+    }
+
+    return 0;
+}
